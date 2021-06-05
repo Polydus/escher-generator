@@ -1,6 +1,3 @@
-////declare var shaderSourcesFrag: any;
-//declare var shaderSourcesVert: any;
-//declare var uvMesh: any;
 var _ = undefined;
 var degToRad = Math.PI / 180.0;
 var radToDeg = 180.0 / Math.PI;
@@ -603,7 +600,6 @@ class Vector3 {
         this.y = 0;
         this.z = 0;
         this.arrValues = [this.x, this.y, this.z];
-        this.mat4 = mat4.create();
     }
     static cross(v1, v2, res) {
         res.set(v1.y * v2.z - v1.z * v2.y, v1.z * v2.x - v1.x * v2.z, v1.x * v2.y - v1.y * v2.y);
@@ -724,7 +720,6 @@ class ColorForm {
             window.document.getElementById("g-input-label"),
             window.document.getElementById("b-input-label")
         ];
-        //colors-form-hue-label
         this.fixedColorsSelects = [];
         this.colorChecks = [];
         this.colorStatuses = [];
