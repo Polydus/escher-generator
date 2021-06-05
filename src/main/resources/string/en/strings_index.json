@@ -1,0 +1,55 @@
+{
+  "":"",
+  "title": "Escher Generator",
+
+
+  "scale": "Scale",
+  "shape": "Shape",
+
+  "CUBE": "Cube",
+  "TRIANGLE": "Triangle",
+  "SQUARE": "Square",
+  "RECTANGLE": "Rectangle",
+  "HEXAGON": "Hexagon",
+  "OCTAGON": "Octagon",
+
+  "patterns": "Patterns",
+  "patterns_shapes": "Shapes",
+  "patterns_colors": "Colors",
+
+  "hex_label": "Hex code",
+
+  "hue_label": "Hue",
+  "saturation_label": "Saturation",
+  "lightness_label": "Lightness",
+  "red_label": "Red",
+  "green_label": "Green",
+  "blue_label": "Blue",
+
+  "vpi_label": "Value per index",
+  "vpx_label": "Value per x",
+  "vpy_label": "Value per y",
+
+  "submit": "Use patterns",
+
+  "lang": "Language",
+  "lang_en": "English",
+  "lang_nl": "Dutch",
+
+  "footer_source": "Source",
+  "footer_more": "More by Polydus",
+
+  "about_header": "About Escher Generator",
+
+  "about_subheader_0": "How does this work?",
+  "about_subheader_1": "Will there be updates?",
+
+  "about_content_0": "Escher Generator is a simple tool that you can use to create <a href=\"https://www.google.com/search?q=escher+patterns\">escher patterns</a>\nand save them as images.",
+  "about_content_1": "Use the settings screen above to change the shapes and colors. You can add additional colors to the pattern by clicking on the '+' symbol, or remove them by clicking on the 'x'. To change a color, click on it and use the sliders or type a different hex code.  When you're done editing, click 'Use patterns' to see the result!",
+  "about_content_1_1": "You can save the image you created by right-clicking on the image and selecting 'save as', or by using the save button under the image.",
+  "about_content_2": "The following updates are planned:<ul class=\"list-unstyled mb-0\"><li>- Ability to use custom shapes</li><li>- Ability to use shifting colors (for example, by shifting a color's hue by 10 points every row)</li></ul>",
+
+  "last_update": "Escher Generator was last updated on June 4th, 2021."
+
+
+}
