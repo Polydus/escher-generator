@@ -3,6 +3,9 @@ package com.polydus.eschergen.util
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.json.GsonJsonParser
+import org.springframework.boot.json.JsonParser
+import org.springframework.boot.json.JsonParserFactory
 import org.springframework.core.io.Resource
 import org.springframework.stereotype.Component
 import org.springframework.ui.Model
@@ -24,6 +27,7 @@ class Strings() {
         val json = Json {  }
         var input = resourceFileEN.inputStream
         var string = String(input.readAllBytes())
+
         stringsEN = json.decodeFromString<HashMap<String, String>>(string)
 
         input = resourceFileNL.inputStream
