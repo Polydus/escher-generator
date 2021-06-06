@@ -1,1 +1,1 @@
-web: java -jar jar/eschergen-0.0.1-SNAPSHOT-plain.jar
+web: java -jar jar/eschergen-0.0.1-SNAPSHOT.jar
