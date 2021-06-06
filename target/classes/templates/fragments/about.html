@@ -1,0 +1,43 @@
+
+<div class="container border-dark mb-4">
+
+    <div class="d-flex justify-content-between margin1rem">
+        <h2 id="about-header" th:text="${strings.about_header}"></h2>
+
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#"
+               role="button" id="locales"
+               data-bs-toggle="dropdown" aria-expanded="false">
+                    <span th:switch="${lang}">
+            <span th:case="'nl'" class="flag-icon flag-icon-nl"></span>
+            <span th:case="*" class="flag-icon flag-icon-us"></span>
+        </span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="locales">
+                <li><a class="dropdown-item" href="/setlang?lang=en"><span class="flag-icon flag-icon-us"></span><span class="locale-text" th:text="${strings.lang_en}"></span></a></li>
+                <li><a class="dropdown-item" href="/setlang?lang=nl"><span class="flag-icon flag-icon-nl"></span><span class="locale-text" th:text="${strings.lang_nl}"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+    <div class="row mb-0">
+        <p class="mb-0" th:utext="${strings.about_content_0}"></p>
+    </div>
+    <div class="row">
+        <h4 class="mb-0" th:utext="${strings.about_subheader_0}"></h4>
+    </div>
+    <div class="row mb-0">
+        <p th:utext="${strings.about_content_1}"></p>
+        <p class="mb-0" th:utext="${strings.about_content_1_1}"></p>
+    </div>
+    <div class="row">
+        <h4 class="mb-0" th:utext="${strings.about_subheader_1}"></h4>
+    </div>
+    <div class="row mb-0">
+        <p th:utext="${strings.about_content_2}"></p>
+    </div>
+    <hr>
+    <div class="row mb-0">
+        <p th:utext="${strings.last_update}"></p>
+    </div>
+</div>
