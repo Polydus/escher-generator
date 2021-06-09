@@ -46,6 +46,7 @@ dependencies {
 
 	//delaunay
 	implementation("com.github.jdiemke.delaunay-triangulator:DelaunayTriangulator:1.0.0")
+	implementation(files("jar/poly2tri-core-0.1.1-SNAPSHOT.jar"))
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

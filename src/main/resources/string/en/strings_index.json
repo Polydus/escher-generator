@@ -7,6 +7,7 @@
   "shape": "Shape",
 
   "CUBE": "Cube",
+  "CUBE_HOLLOW": "Hollow Cube",
   "TRIANGLE": "Triangle",
   "SQUARE": "Square",
   "RECTANGLE": "Rectangle",
@@ -49,7 +50,7 @@
   "about_content_1_1": "You can save the image you created by right-clicking on the image and selecting 'save as', or by using the save button under the image.",
   "about_content_2": "The following updates are planned:<ul class=\"list-unstyled mb-0\"><li>- Ability to use custom shapes</li><li>- Ability to use shifting colors (for example, by shifting a color's hue by 10 points every row)</li></ul>",
 
-  "last_update": "Escher Generator was last updated on June 4th, 2021."
+  "last_update": "Escher Generator was last updated on June 9th, 2021."
 
 
 }

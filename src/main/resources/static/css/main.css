@@ -22,6 +22,16 @@ body {
     color: #fff;
 }
 
+.header-title-sm {
+    text-align: center;
+}
+
+.blog-header-buttons-container {
+    width: max-content;
+    max-width: max-content;
+    min-width: max-content;
+}
+
 .title-container {
     margin: 1rem 0;
 }
@@ -359,6 +369,14 @@ FOOTER
 .blog-header {
     background-color: #2196F3;
     padding: 0.1rem;
+}
+
+.min-width-300px {
+    min-width: 300px;
+}
+
+.row-justify-center {
+    justify-content: center;
 }
 
 /*

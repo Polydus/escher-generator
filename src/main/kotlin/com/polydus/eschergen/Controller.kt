@@ -77,7 +77,7 @@ class Controller {
 
         val mesh = Mesh.genEscherRectangle(dto)
 
-        model.addAttribute("uvMesh", mesh)
+        model.addAttribute("uvMeshes", mesh)
         model.addAttribute("formSettingsDto", dto)
         model.addAttribute("lang", lang)
     }

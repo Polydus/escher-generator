@@ -4,6 +4,7 @@ enum class Shape {
 
     //A,
     CUBE,
+    CUBE_HOLLOW,
     TRIANGLE,
     SQUARE,
     RECTANGLE,

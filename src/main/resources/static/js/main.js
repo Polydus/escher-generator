@@ -77,13 +77,17 @@ class Main {
             return false;
         });
         this.shader.init(this.gl);
-        this.objs[0] = new Drawable();
-        this.objs[0].shader = this.shader;
-        this.objs[0].fromMesh(this.gl, context.uvMesh);
-        //this.objs[0].uvSphere(this.gl, this.noise);
-        //this.objs[0].hexahedron(this.gl, this.noise);
-        context.uvMesh = _;
-        this.objs[0].translation = [0.0, 0.0, 0.0];
+        for (var i = 0; i < context.uvMeshes.length; i++) {
+            this.objs[i] = new Drawable();
+            this.objs[i].shader = this.shader;
+            this.objs[i].texture = this.gl.getTexture(this.objs[i].textureName);
+            this.objs[i].fromMesh(this.gl, context.uvMeshes[i]);
+        }
+        //this.objs[0] = new Drawable();
+        //this.objs[0].shader = this.shader;
+        //this.objs[0].fromMesh(this.gl, context.uvMesh);
+        context.uvMeshes = _;
+        //this.objs[0].translation = [0.0, 0.0, 0.0];
         //this.objs[0].rotationSpeed = 10;
         //this.objs[0].rotate = true;
         /*this.objs[1] = new Drawable()
@@ -275,7 +279,7 @@ class Drawable {
         this.rotation = 0;
         this.rotationSpeed = 0;
         this.rotate = false;
-        this.translation = [0.0, 0.0, -6.0];
+        this.translation = [0.0, 0.0, 0.0];
     }
     update(delta) {
         if (this.rotate) {
@@ -771,6 +775,9 @@ class ColorForm {
         this.colorAddButton.onclick = this.onColorAddClick.bind(this);
         var hexInput = window.document.getElementById("hexcode-input");
         hexInput.oninput = this.onHexEdit.bind(this);
+        this.rgbInputs[0].oninput = this.onRgbInputSet.bind(this, 0);
+        this.rgbInputs[1].oninput = this.onRgbInputSet.bind(this, 1);
+        this.rgbInputs[2].oninput = this.onRgbInputSet.bind(this, 2);
     }
     onHexEdit() {
         var hex = this.hexInput.value;
@@ -798,6 +805,35 @@ class ColorForm {
             //console.log(r + " " + g + " " + b);
             this.fixedColorsSelects[this.currentColorIndex].setElementRGB(r, g, b);
             this.updateRangesOf(this.currentColorIndex);
+            this.update();
+        }
+    }
+    onRgbInputSet(index) {
+        if (index === 0) {
+            var r = this.rgbInputs[0].value + "";
+            var value = parseInt(r.match(/[0-9]+/g)[0]);
+            value = Math.max(value, 0);
+            value = Math.min(value, this.colorHueRanges[this.currentColorIndex].max);
+            console.log(value);
+            this.colorHueRanges[this.currentColorIndex].value = value;
+            this.update();
+        }
+        else if (index === 1) {
+            var g = this.rgbInputs[1].value + "";
+            var value = parseInt(g); //parseInt(g.match(/[0-9]+/g)[0]);
+            value = Math.max(value, 0);
+            value = Math.min(value, this.colorSaturationRanges[this.currentColorIndex].max);
+            console.log(value);
+            this.colorSaturationRanges[this.currentColorIndex].value = value;
+            this.update();
+        }
+        else if (index === 2) {
+            var b = this.rgbInputs[2].value + "";
+            var value = parseInt(b);
+            value = Math.max(value, 0);
+            value = Math.min(value, this.colorLightnessRanges[this.currentColorIndex].max);
+            console.log(value);
+            this.colorLightnessRanges[this.currentColorIndex].value = value;
             this.update();
         }
     }
