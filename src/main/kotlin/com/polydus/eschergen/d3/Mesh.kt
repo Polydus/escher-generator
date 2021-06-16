@@ -329,9 +329,6 @@ class Mesh {
 
                     for(y in -(height)..height){
                         for(x in -(width)..width){
-                            //setColor(dto, color0, (x * 3) + 0, y, index, tempVector3F.clear(), -(width * 3), -(height))
-                            //setColor(dto, color1, (x * 3) + 1, y, index, tempVector3F.clear(), -(width * 3), -(height))
-                            //setColor(dto, color2, (x * 3) + 2, y, index, tempVector3F.clear(), -(width * 3), -(height))
                             setColor(dto, color0, x, (y * 3) + 0, index, tempVector3F.clear(), -(width), -(height * 3))
                             setColor(dto, color1, x, (y * 3) + 1, index, tempVector3F.clear(), -(width), -(height * 3))
                             setColor(dto, color2, x, (y * 3) + 2, index, tempVector3F.clear(), -(width), -(height * 3))
@@ -539,7 +536,7 @@ class Mesh {
                 addToArray(positions, t.a.x, t.a.y, t.b.x, t.b.y, t.c.x, t.c.y)
 
                 //val color2 = Colors.setHsl(Vector3F(), Random.nextFloat() * 360f, 50f, 50f)
-                val c = arrayOf(Random.nextDouble(), Random.nextDouble(), Random.nextDouble())
+                //val c = arrayOf(Random.nextDouble(), Random.nextDouble(), Random.nextDouble())
 
                 repeat(3) {
                     addColorToArray(colors, color)

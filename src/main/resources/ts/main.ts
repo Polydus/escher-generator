@@ -1,4 +1,5 @@
 declare var mat4: any;
+declare var bootstrap: any;
 declare var context: any;
 
 var _ = undefined;
@@ -1014,7 +1015,7 @@ class ColorForm{
 
             value = Math.max(value, 0);
             value = Math.min(value, this.colorHueRanges[this.currentColorIndex].max);
-            console.log(value);
+            //console.log(value);
 
             this.colorHueRanges[this.currentColorIndex].value = value;
             this.update();
@@ -1024,7 +1025,7 @@ class ColorForm{
 
             value = Math.max(value, 0);
             value = Math.min(value, this.colorSaturationRanges[this.currentColorIndex].max);
-            console.log(value);
+            //console.log(value);
 
             this.colorSaturationRanges[this.currentColorIndex].value = value;
             this.update();
@@ -1034,7 +1035,7 @@ class ColorForm{
 
             value = Math.max(value, 0);
             value = Math.min(value, this.colorLightnessRanges[this.currentColorIndex].max);
-            console.log(value);
+            //console.log(value);
 
             this.colorLightnessRanges[this.currentColorIndex].value = value;
             this.update();
@@ -1175,7 +1176,7 @@ class ColorForm{
     }
 
     update(){
-        console.log("update() " + Date.now());
+        //console.log("update() " + Date.now());
 
         for(var i = 0; i < this.colorsLimit; i++){
             this.updateElementColor(i);
@@ -1209,13 +1210,44 @@ class ColorForm{
             this.colorAddButton.style.display = "block";
 
         }
-        var rgb = ["", "", ""];
+        var rgbStrings = [
+            this.colorHueRanges[this.currentColorIndex].value,
+            this.colorSaturationRanges[this.currentColorIndex].value, 
+            this.colorLightnessRanges[this.currentColorIndex].value];
+        var rgbValues = [
+            new Number(rgbStrings[0]),
+            new Number(rgbStrings[1]),
+            new Number(rgbStrings[2])];
 
-        var str = this.colorHueRanges[this.currentColorIndex].value;
+        if(this.colorSettingStatus === 0){
+            rgbStrings[0] = rgbValues[0].toFixed(0);
+            rgbStrings[1] = rgbValues[1].toFixed(0);
+            rgbStrings[2] = rgbValues[2].toFixed(0);
+
+            this.hueValue.innerHTML = rgbStrings[0];
+            this.saturationValue.innerHTML = rgbStrings[1];
+            this.lightnessValue.innerHTML = rgbStrings[2];
+            this.rgbInputs[0].value = rgbStrings[0];
+            this.rgbInputs[1].value = rgbStrings[1];
+            this.rgbInputs[2].value = rgbStrings[2];
+        } else {
+            rgbStrings[0] = rgbValues[0].toFixed(0);
+            rgbStrings[1] = rgbValues[1].toFixed(1);
+            rgbStrings[2] = rgbValues[2].toFixed(1);
+
+            this.hueValue.innerHTML = rgbStrings[0];
+            this.saturationValue.innerHTML = rgbStrings[1];
+            this.lightnessValue.innerHTML = rgbStrings[2];
+            this.rgbInputs[0].value = rgbValues[0].toFixed(0);
+            this.rgbInputs[1].value = rgbValues[1].toFixed(0);
+            this.rgbInputs[2].value = rgbValues[2].toFixed(0);
+        }
+
+        /*var str = this.colorHueRanges[this.currentColorIndex].value;
         var value: Number = new Number(str);
         str = value.toFixed(0);
         this.hueValue.innerHTML = str;
-        rgb[0] = str;
+        rgbStrings[0] = str;
 
         var str = this.colorSaturationRanges[this.currentColorIndex].value;
         var value: Number = new Number(str);
@@ -1227,7 +1259,7 @@ class ColorForm{
         } 
         this.saturationValue.innerHTML = str;
         if(this.colorSettingStatus === 1) this.saturationValue.innerHTML += "%";
-        rgb[1] = str;
+        rgbStrings[1] = str;
   
         var str = this.colorLightnessRanges[this.currentColorIndex].value;
         var value: Number = new Number(str);
@@ -1238,64 +1270,14 @@ class ColorForm{
         } 
         this.lightnessValue.innerHTML = str;
         if(this.colorSettingStatus === 1) this.lightnessValue.innerHTML += "%";
-        rgb[2] = str;
+        rgbStrings[2] = str;
 
-        this.rgbInputs[0].value = rgb[0];
-        this.rgbInputs[1].value = rgb[1];
-        this.rgbInputs[2].value = rgb[2];
+        this.rgbInputs[0].value = rgbStrings[0];
+        this.rgbInputs[1].value = rgbStrings[1];
+        this.rgbInputs[2].value = rgbStrings[2];*/
     }
 }
 
-class ColorForm2{
-
-    ranges: any[] = []
-    values: any[] = []
-
-    suffixes: string[] = []
-
-
-    colorExample: any = _;
-
-    colorElement = new ColoredElement();
-
-    index = 0;
-
-    constructor(index){
-        this.index = index;
-
-        for(var i = 0; i < 6; i++){
-            var range = window.document.getElementById("select-color" + this.index + "-range-" + i) as HTMLDivElement
-            var label = window.document.getElementById("select-color" + this.index + "-range-" + i + "-value") as HTMLDivElement
-            this.ranges.push(range)
-            this.values.push(label)
-            this.suffixes[i] = "";
-        }
-        //this.suffixes[3] = "%";
-        this.suffixes[4] = "%";
-        this.suffixes[5] = "%";
-
-        this.colorElement.element = window.document.getElementById("color-example-" + this.index) as HTMLDivElement
-    }
-
-    onInput(){
-        for(var i = 0; i < this.ranges.length; i++){
-            var str = this.ranges[i].value;
-            var value: Number = new Number(str);
-            var res = str.split(".");
-            //if(res.length === 1 || res[1].length < 3){
-                str = value.toFixed(0);
-            //}
-            this.values[i].innerHTML = str + this.suffixes[i];
-        }
-
-        //this.getColor(i);
-        var h = this.ranges[3].value;
-        var s = this.ranges[4].value;
-        var l = this.ranges[5].value;
-        this.colorElement.setElement(parseFloat(h), parseFloat(s), parseFloat(l));
-    }
-
-}
 
 class ColoredElement {
 
@@ -1523,6 +1505,34 @@ class ColoredElement {
 
 window.onload = () => {
     var main = main || new Main();
+
+    var settingButton = document.getElementById('setting-button') as any;
+    var aboutButton = document.getElementById('about-button') as any;
+    var aboutCollapse = document.getElementById('about-collapse') as any;
+    var colorFormCollapse = document.getElementById('color-form-collapse') as any;
+    var aboutCollapseBs = new bootstrap.Collapse(aboutCollapse, {toggle: false});
+    var colorFormCollapseBs = new bootstrap.Collapse(colorFormCollapse, {toggle: false});
+
+
+    aboutCollapse.addEventListener('show.bs.collapse', function () {
+        aboutButton.classList.add("background-color-selected");
+        settingButton.classList.remove("background-color-selected");
+
+        colorFormCollapseBs.hide();
+    })
+    colorFormCollapse.addEventListener('show.bs.collapse', function () {
+        settingButton.classList.add("background-color-selected");
+        aboutButton.classList.remove("background-color-selected");
+
+        aboutCollapseBs.hide();
+    })
+
+    aboutCollapse.addEventListener('hide.bs.collapse', function () {
+        aboutButton.classList.remove("background-color-selected");
+    })
+    colorFormCollapse.addEventListener('hide.bs.collapse', function () {
+        settingButton.classList.remove("background-color-selected");
+    })
 
     var form = form || new Form();
     form.update();

@@ -2,7 +2,7 @@
 
 <!-- th:with="userCredentials=${new UserCredentials()}"-->
 
-<form id="colors-form" class="container border-dark mb-4" th:action="@{/colors}" th:object="${formSettingsDto}" method="post">
+<form id="colors-form" class="container" th:action="@{/colors}" th:object="${formSettingsDto}" method="post">
 
     <div class="row">
         <div class="form-floating">
@@ -10,7 +10,7 @@
                 <option th:each="shape : ${T(com.polydus.eschergen.d3.Shape).values()}"
                         th:value="${shape}" th:text="${strings[shape.name]}"></option>
             </select>
-            <label for="indent-select" th:text="${strings.shape}"></label>
+            <label for="indent-select" th:utext="${strings.shape}"></label>
         </div>
     </div>
 
@@ -107,7 +107,7 @@
 
 
     <div class="submit-button-container">
-        <button type="submit" id="submit-button2" th:text="${strings.submit}" class="btn blue-full-button"></button>
+        <button type="submit" id="submit-button2" th:utext="${strings.submit}" class="btn blue-full-button"></button>
     </div>
 </form>
 

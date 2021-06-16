@@ -1,26 +1,52 @@
-<div class="container">
-    <div class="row">
-        <div class="col canvas-option">
-            <a id="angle-left-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-left"></i></a>
-            <a id="angle-left-button" class="anchor-header anchor-black"><i class="fas fa-angle-left"></i></a>
-            <p id="angle-desc" class="value-desc">0°</p>
-            <a id="angle-right-button" class="anchor-header anchor-black"><i class="fas fa-angle-right"></i></a>
-            <a id="angle-right-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-right"></i></a>
+    <div id="canvas-controls" class="d-flex justify-content-between align-items-center">
+
+        <div class="col canvas-controls-col canvas-controls-border-right">
+            <div class="row nomargin">
+                <div class="canvas-option">
+                    <a id="angle-left-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-left"></i></a>
+                    <a id="angle-left-button" class="anchor-header anchor-black"><i class="fas fa-angle-left"></i></a>
+                    <p id="angle-desc" class="value-desc">0°</p>
+                    <a id="angle-right-button" class="anchor-header anchor-black"><i class="fas fa-angle-right"></i></a>
+                    <a id="angle-right-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-right"></i></a>
+                </div>
+
+                <div class="canvas-option canvas-controls-border-left">
+                    <a id="scale-left-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-left"></i></a>
+                    <a id="scale-left-button" class="anchor-header anchor-black"><i class="fas fa-angle-left"></i></a>
+                    <p id="scale-desc" class="value-desc">1.00x</p>
+                    <a id="scale-right-button" class="anchor-header anchor-black"><i class="fas fa-angle-right"></i></a>
+                    <a id="scale-right-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-right"></i></a>
+                </div>
+
+
+                <div class="canvas-option canvas-controls-border-left">
+                    <a id="save-image-button" class="anchor-header anchor-black"><i class="fas fa-save"></i></a>
+                    <!--<button id="save-image-button" class="btn btn-primary"><i class="fas fa-file-download"></i></button>-->
+                </div>
+            </div>
         </div>
 
-        <div class="col canvas-option">
-            <a id="scale-left-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-left"></i></a>
-            <a id="scale-left-button" class="anchor-header anchor-black"><i class="fas fa-angle-left"></i></a>
-            <p id="scale-desc" class="value-desc">1.00x</p>
-            <a id="scale-right-button" class="anchor-header anchor-black"><i class="fas fa-angle-right"></i></a>
-            <a id="scale-right-double-button" class="anchor-header anchor-black"><i class="fas fa-angle-double-right"></i></a>
+
+
+        <div class="col canvas-controls-col canvas-controls-border-left">
+            <div class="row nomargin">
+                <div class="canvas-option" id="setting-button">
+                    <a class="anchor-header anchor-black" data-bs-toggle="collapse" data-bs-target="#color-form-collapse"
+                       aria-expanded="false" aria-controls="color-form-collaps"><i class="fas fa-paint-brush"></i></a>
+                </div>
+
+                <div class="canvas-option canvas-controls-border-left" id="about-button">
+                    <a class="anchor-header anchor-black" data-bs-toggle="collapse" data-bs-target="#about-collapse"
+                       aria-expanded="false" aria-controls="about-collapse"><i class="fas fa-question"></i></a>
+                </div>
+
+            </div>
+
         </div>
 
 
-        <div class="col canvas-option">
-            <a id="save-image-button" class="anchor-header anchor-black"><i class="fas fa-download"></i></a>
-            <!--<button id="save-image-button" class="btn btn-primary"><i class="fas fa-file-download"></i></button>-->
-        </div>
 
     </div>
-</div>
+
+
+

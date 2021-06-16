@@ -4,7 +4,7 @@
 
 
   "scale": "Schaal",
-  "shape": "Vorm",
+  "shape": "<i class=\"fas fa-shapes\"></i> Vorm",
 
   "CUBE": "Kubus",
   "CUBE_HOLLOW": "Kubus (hol)",
@@ -31,7 +31,7 @@
   "vpx_label": "Value per x",
   "vpy_label": "Value per y",
 
-  "submit": "Patroon gebruiken",
+  "submit": "<i class=\"fas fa-sync\"></i> Patroon gebruiken",
 
   "lang": "Taal",
   "lang_en": "Engels",
@@ -46,9 +46,9 @@
   "about_subheader_1": "Komen er updates?",
 
   "about_content_0": "Escher Generator is een simpele manier waarmee je <a href=\"https://www.google.com/search?q=escher+patterns\">Escher patronen</a>\n kunt maken en als afbeeldingen opslaan.",
-  "about_content_1": "Gebruik het instellingenscherm hierboven om de vormen en kleuren te wijzigen. Je kunt extra kleuren aan het patroon toevoegen door op het '+'-symbool te klikken, of een kleur verwijderen door op de 'x' te klikken. Een kleur kan worden gewijzigd door erop te klikken en de rgb/hsl waardes te veranderen of door een hexadecimale code in te voeren. Klik op 'Patroon gebruiken' om het resultaat te zien!",
-  "about_content_1_1": "Je kan een afbeelding opslaan door te rechtsklikken op de afbeelding en 'opslaan als' te selecteren, of door op de opslaan-knop onder de afbeelding te klikken.",
+  "about_content_1": "Gebruik het instellingenscherm om de vormen en kleuren te wijzigen. Je kunt extra kleuren aan het patroon toevoegen door op het '+'-symbool te klikken, of een kleur verwijderen door op de 'x' te klikken. Een kleur kan worden gewijzigd door erop te klikken en de rgb/hsl waardes te veranderen of door een hexadecimale code in te voeren. Klik op 'Patroon gebruiken' om het resultaat te zien!",
+  "about_content_1_1": "Je kan een afbeelding opslaan door te rechtsklikken op de afbeelding en 'opslaan als' te selecteren, of door op de opslaan-knop te klikken.",
   "about_content_2": "De volgende updates zijn gepland:<ul class=\"list-unstyled mb-0\"><li>- Gebruik van eigen vormen</li><li>- Mogelijkheid om kleurpatroon te gebruiken (bijvoorbeeld door elke rij de tint van een kleur met 10 punten te verschuiven)</li></ul>",
 
-  "last_update": "Escher Generator werd laatst geüpdate op 9 juni 2021."
+  "last_update": "Escher Generator werd laatst geüpdate op 15 juni 2021."
 }

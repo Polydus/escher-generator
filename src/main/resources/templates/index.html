@@ -18,21 +18,37 @@
 
 <div th:replace="fragments/header :: header"></div>
 
-<main role="main" class="container">
+<main role="main" class="">
 
-    <div class="row d-block d-sm-none mb4">
+
+
+    <div id="title-sm-container" class="row d-block d-sm-none mb4">
         <h3 class="header-title-sm" th:text="${strings.title}"></h3>
     </div>
 
-    <div class="container border-dark-squaretop mb-4 canvas-container">
-        <div th:replace="fragments/canvas :: div"></div>
-
+    <div>
         <div th:replace="fragments/canvascontrols :: div"></div>
     </div>
 
-    <div th:replace="fragments/fixedcolorform :: form"></div>
 
-    <div th:replace="fragments/about :: div"></div>
+    <div class="collapse multi-collapse" id="color-form-collapse"  data-parent="">
+        <div th:replace="fragments/fixedcolorform :: form"></div>
+    </div>
+
+    <div class="collapse multi-collapse" id="about-collapse"  data-parent="">
+        <div th:replace="fragments/about :: div"></div>
+    </div>
+
+
+
+
+    <div id="container-canvas" class="canvas-container">
+        <div th:replace="fragments/canvas :: div"></div>
+
+    </div>
+
+
+
 
 <!--
     <div class="dropdown">

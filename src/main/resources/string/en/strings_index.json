@@ -4,7 +4,7 @@
 
 
   "scale": "Scale",
-  "shape": "Shape",
+  "shape": "<i class=\"fas fa-shapes\"></i> Shape",
 
   "CUBE": "Cube",
   "CUBE_HOLLOW": "Hollow Cube",
@@ -31,7 +31,7 @@
   "vpx_label": "Value per x",
   "vpy_label": "Value per y",
 
-  "submit": "Use patterns",
+  "submit": "<i class=\"fas fa-sync\"></i> Use patterns",
 
   "lang": "Language",
   "lang_en": "English",
@@ -46,11 +46,11 @@
   "about_subheader_1": "Will there be updates?",
 
   "about_content_0": "Escher Generator is a simple tool that you can use to create <a href=\"https://www.google.com/search?q=escher+patterns\">Escher patterns</a>\nand save them as images.",
-  "about_content_1": "Use the settings screen above to change the shapes and colors. You can add additional colors to the pattern by clicking on the '+' symbol, or remove them by clicking on the 'x'. To change a color, click on it and use the sliders or type a different hex code.  When you're done editing, click 'Use patterns' to see the result!",
-  "about_content_1_1": "You can save the image you created by right-clicking on the image and selecting 'save as', or by using the save button under the image.",
+  "about_content_1": "Use the settings screen to change the shapes and colors. You can add additional colors to the pattern by clicking on the '+' symbol, or remove them by clicking on the 'x'. To change a color, click on it and use the sliders or type a different hex code.  When you're done editing, click 'Use patterns' to see the result!",
+  "about_content_1_1": "You can save the image you created by right-clicking on the image and selecting 'save as', or by using the save button seen above.",
   "about_content_2": "The following updates are planned:<ul class=\"list-unstyled mb-0\"><li>- Ability to use custom shapes</li><li>- Ability to use shifting colors (for example, by shifting a color's hue by 10 points every row)</li></ul>",
 
-  "last_update": "Escher Generator was last updated on June 9th, 2021."
+  "last_update": "Escher Generator was last updated on June 15th, 2021."
 
 
 }
