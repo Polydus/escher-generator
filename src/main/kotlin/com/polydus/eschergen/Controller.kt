@@ -37,9 +37,21 @@ class Controller {
                  @ModelAttribute("formSettingsDto") formSettingsDto: FormSettingsDto,
                  @CookieValue("lang") lang: String?): String {
 
+        //println("/ $lang $reset")
+        //if(reset != null && reset) formSettingsDto.reset()
+
         setModel(model, formSettingsDto, lang ?: "en")
 
         return "index"
+    }
+
+    @GetMapping("/reset")
+    fun reset(model: Model,
+              @ModelAttribute("formSettingsDto") formSettingsDto: FormSettingsDto,
+              @CookieValue("lang") lang: String?): String{
+        formSettingsDto.reset()
+
+        return "redirect:/"
     }
 
     @GetMapping("/setlang")

@@ -32,6 +32,7 @@
   "vpy_label": "Value per y",
 
   "submit": "<i class=\"fas fa-sync\"></i> Patroon gebruiken",
+  "reset": "<i class=\"fas fa-undo\"></i> Reset",
 
   "lang": "Taal",
   "lang_en": "Engels",
@@ -40,6 +41,7 @@
   "footer_source": "Bron",
   "footer_more": "Meer van Polydus",
 
+  "colorform_header": "Patronen bewerken",
   "about_header": "Over Escher Generator",
 
   "about_subheader_0": "Hoe werkt dit?",

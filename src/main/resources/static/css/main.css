@@ -150,6 +150,12 @@ body {
 FORM
 */
 
+#reset-button-container{
+    padding-top: 1rem;
+    /*justify-content: end;*/
+    display: flex;
+}
+
 #colors-form {
   background-color: #eee;
     padding: 1rem;
@@ -495,6 +501,10 @@ a.active:focus {
 
 .margin1rem {
     margin: 1rem;
+}
+
+.nomargintop {
+    margin-top: 0;
 }
 
 .autowidth {

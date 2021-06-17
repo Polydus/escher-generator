@@ -2,6 +2,13 @@
 
 <!-- th:with="userCredentials=${new UserCredentials()}"-->
 
+
+<form action="/reset" method="get" id="reset-button-container" class="container justify-content-between">
+    <h2 id="about-header" th:text="${strings.colorform_header}"></h2>
+    <button id="submit-button3" th:utext="${strings.reset}" class="btn blue-full-button"></button>
+</form>
+
+
 <form id="colors-form" class="container" th:action="@{/colors}" th:object="${formSettingsDto}" method="post">
 
     <div class="row">
@@ -109,9 +116,8 @@
     <div class="submit-button-container">
         <button type="submit" id="submit-button2" th:utext="${strings.submit}" class="btn blue-full-button"></button>
     </div>
+
 </form>
-
-
 
 <!--
 

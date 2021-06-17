@@ -10,10 +10,15 @@ class FixedColor(){
 
     var inUse = false
 
-    var serviceID = 0L
-
     fun set(vector3F: Vector3F){
         vector3F.set(hue, saturation, lightness)
+    }
+
+    fun reset(){
+        hue = 0f
+        saturation = 50f
+        lightness = 50f
+        inUse = false
     }
 
     override fun toString(): String {

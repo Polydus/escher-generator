@@ -32,6 +32,14 @@ class FormSettingsDto() {
         getColors()[8].hue = 270f
         getColors()[9].hue = 330f*/
 
+        reset()
+    }
+
+    fun reset(){
+        for(c in fixedColors){
+            c.reset()
+        }
+        colorSetting = 1
         getColors()[0].hue = 0f
         getColors()[1].hue = 0f
         getColors()[2].hue = 0f

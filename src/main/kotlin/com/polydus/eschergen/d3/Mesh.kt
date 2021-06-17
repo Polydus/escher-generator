@@ -362,7 +362,8 @@ class Mesh {
                     for(y in -(height + 1)..height){
                         for(x in -(width + 1)..width){
                             //setting.colorSetting.setHsl(color, x, y, index)
-                            setColor(dto, color, x, y, index, tempVector3F.clear(), -(width + 1), -(height + 1))
+                                tempVector3F.set(x * 10f, 0f, 0f)
+                            setColor(dto, color, x, y, index, tempVector3F, -(width + 1), -(height + 1))
                             if(x % 2 == 0){
                                 addShape(shape1,
                                     ((1.0 - ratioReverse) * 2.0) * (x / 2),

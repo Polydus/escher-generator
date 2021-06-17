@@ -32,6 +32,7 @@
   "vpy_label": "Value per y",
 
   "submit": "<i class=\"fas fa-sync\"></i> Use patterns",
+  "reset": "<i class=\"fas fa-undo\"></i> Reset",
 
   "lang": "Language",
   "lang_en": "English",
@@ -40,6 +41,7 @@
   "footer_source": "Source",
   "footer_more": "More by Polydus",
 
+  "colorform_header": "Pattern Editor",
   "about_header": "About Escher Generator",
 
   "about_subheader_0": "How does this work?",
