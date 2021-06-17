@@ -19,10 +19,6 @@ class Mesh {
     var vertices = HashMap<Shader.Attribute, ArrayList<Double>>()
     var indices = ArrayList<Int>()
 
-    var attributes = ArrayList<Shader.Attribute>()
-
-    //val shapes = HashMap<Shape, ArrayList<ArrayList<Vector3F>>>()
-
     init {
 
     }
@@ -34,18 +30,11 @@ class Mesh {
 
         fun genEscherRectangle(/*setting: EscherSettings, */dto: FormSettingsDto): List<Mesh> {
             val meshes = ArrayList<Mesh>()
-            //var currentMesh = Mesh()
-
-            //val positionVertices = currentMesh.vertices[Shader.Attribute.POSITION_2D]!!
-            //val colorVertices = currentMesh.vertices[Shader.Attribute.COLOR]!!
-            //val indices = currentMesh.indices
 
             val positionVertices = arrayListOf<Double>()
             val colorVertices = arrayListOf<Double>()
             val indices = arrayListOf<Int>()
             buildNewMesh(null, meshes, positionVertices, colorVertices, indices)
-
-            //val scale = setting.scale//.toDouble().coerceIn(1.0, 10.0)
 
             val points = arrayListOf<Vector2D>()
             var width = (20.0).toInt()
@@ -55,88 +44,7 @@ class Mesh {
 
             val tempVector3F = Vector3F()
 
-            //val color2 = Vector3F()
-            //Colors.setHsl(color2, 0f, 50f, 50f)
-
             when(dto.shape){
-                /*Shape.A -> {
-                    width = (10).toInt()
-                    height = (10).toInt()
-
-                    points.clear()
-                    points.addAll(listOf(
-                        Vector2D(0 / 100.0, 0 / 100.0),
-                        Vector2D(15 / 100.0, 0 / 100.0),
-                        Vector2D(31 / 100.0, 8 / 100.0),
-                        Vector2D(39 / 100.0, 23 / 100.0),
-                        Vector2D(58 / 100.0, 24 / 100.0),
-                        Vector2D(63 / 100.0, 31 / 100.0),
-                        Vector2D(47 / 100.0, 31 / 100.0),
-                        Vector2D(47 / 100.0, 35 / 100.0),
-                        Vector2D(51 / 100.0, 39 / 100.0),
-                        Vector2D(47 / 100.0, 47 / 100.0),
-                        Vector2D(31 / 100.0, 48 / 100.0),
-                        Vector2D(23 / 100.0, 63 / 100.0),
-                        Vector2D(8 / 100.0, 63 / 100.0),
-                        Vector2D(16 / 100.0, 39 / 100.0),
-                        Vector2D(4 / 100.0, 39 / 100.0),
-                        Vector2D(0 / 100.0, 35 / 100.0),
-                        Vector2D(0 / 100.0, 32 / 100.0),
-                        Vector2D(16 / 100.0, 32 / 100.0),
-                        Vector2D(9 / 100.0, 23 / 100.0),
-                        Vector2D(0 / 100.0, 6 / 100.0),
-
-
-                        ))
-
-                    val shape3 = triangulate(points)
-                    points.clear()
-
-                    points.addAll(listOf(
-                        Vector2D((100 - 0) / 100.0, 0 / 100.0),
-                        Vector2D((100 - 15) / 100.0, 0 / 100.0),
-                        Vector2D((100 - 31) / 100.0, 8 / 100.0),
-                        Vector2D((100 - 39) / 100.0, 23 / 100.0),
-                        Vector2D((100 - 58) / 100.0, 24 / 100.0),
-                        Vector2D((100 - 63) / 100.0, 31 / 100.0),
-                        Vector2D((100 - 47) / 100.0, 31 / 100.0),
-                        Vector2D((100 - 47) / 100.0, 35 / 100.0),
-                        Vector2D((100 - 51) / 100.0, 39 / 100.0),
-                        Vector2D((100 - 47) / 100.0, 47 / 100.0),
-                        Vector2D((100 - 31) / 100.0, 48 / 100.0),
-                        Vector2D((100 - 23) / 100.0, 63 / 100.0),
-                        Vector2D((100 - 8) / 100.0, 63 / 100.0),
-                        Vector2D((100 - 16) / 100.0, 39 / 100.0),
-                        Vector2D((100 - 4) / 100.0, 39 / 100.0),
-                        Vector2D((100 - 0) / 100.0, 35 / 100.0),
-                        Vector2D((100 - 0) / 100.0, 32 / 100.0),
-                        Vector2D((100 - 16) / 100.0, 32 / 100.0),
-                        Vector2D((100 - 9) / 100.0, 23 / 100.0),
-                        Vector2D((100 - 0) / 100.0, 6 / 100.0),
-
-                    ))
-
-                    val shape4 = triangulate(points)
-                    points.clear()
-
-                    for(y in -(height)..height){
-                        for(x in -(width)..width) {
-                            setColor(dto, color, x, y, index, tempVector3F.clear(), -(width), -(height))
-
-                            if(y % 2 == 0){
-                                addShape(shape4,
-                                    (0.5) * x,
-                                    (0.8) * y,
-                                    color, colorVertices, positionVertices, indices)
-                            } else {
-                                addShape(shape3,
-                                    (0.5) * x,
-                                    (0.8) * y,
-                                    color, colorVertices, positionVertices, indices)
-                            }
-                        }
-                    }
-                }*/
                 Shape.SQUARE -> {
                     width = (33.0).toInt()
                     height = (20.0).toInt()
@@ -163,29 +71,6 @@ class Mesh {
                                     (1.0) * (y + 0),
                                     color, colorVertices, positionVertices, indices)
                             }
-
-                            //if(x % 2 == 0){
-
-
-                            //setColor(dto, setting, color, x, (y - 1) * 2, index, tempVector3F.clear(), -(width + 1), -(height + 2) * 2)
-                            //color.set(0f, 1f, 0f)
-                            /*addShape(shape1,
-                                (1.0 * 2.0) * (x + .5),
-                                (1.0 * 2.0) * (y + .5),
-                                color, colors, positions, indices)*/
-                            //} else {
-                                //setColor(dto, setting, color, x, y + 0, index, tempVector3F.clear(), -(width + 1), -(height + 1))
-                                /*addShape(shape1,
-                                    (1.0 * 2.0) * (x / 2) + 1,
-                                    (1.0 * 2.0) * y + 1,
-                                    color, colors, positions, indices)*/
-                            //}
-
-
-
-                            /*setting.colorSetting2.setHsl(color, x, y, index)
-                            addShape(shape1, (1.0 * 2.0) * x + 1, (1.0 * 2.0) * y + 1,
-                                color, colors, positions, indices)*/
                             index++
                         }
                     }
@@ -203,24 +88,12 @@ class Mesh {
 
                     for(y in -(height + 1)..height){
                         for(x in -(width + 1)..width){
-                            //setting.colorSetting.setHsl(color, x, y, index)
                             setColor(dto, color, x, y, index, tempVector3F.clear(), -(width + 1), -(height + 1))
 
                             addShape(shape1,
                                 (2.0) * x,
                                 (2.0) * y,
                                 color, colorVertices, positionVertices, indices)
-                            /*if(x % 2 == 0) {
-                                addShape(shape1,
-                                    (2.0) * x,
-                                    (6.0) * y,
-                                    color, colors, positions, indices)
-                            } else{
-                                addShape(shape1,
-                                    (2.0) * (x + (2.0 / 6.0)),
-                                    (6.0) * (y + (2.0 / 6.0)),
-                                    color, colors, positions, indices)
-                            }*/
 
                             index++
                         }
@@ -229,7 +102,6 @@ class Mesh {
                 Shape.CUBE -> {
                     width = (21.0).toInt()
                     height = (69.0).toInt()
-                    //genShape(points, 120, 0, 0, 90)
                     points.add(Vector2D(0.0, 0.5))
                     points.add(Vector2D(0.0, -0.5))
                     points.add(Vector2D(1.0, 0.0))
@@ -253,23 +125,6 @@ class Mesh {
 
                     for(y in -(height + 0)..height){
                         for(x in -(width + 1)..width){
-                            /*setColor(dto, color, x, y, index, tempVector3F.clear(), -(width + 1), -(height + 1))
-                            addShape(shape1,
-                                (1.0 * 2.0) * x +  + ((1.0) * (y % 2)), (0.75 * 2.0) * y,
-                                color, colors, positions, indices)
-
-                            setColor(dto, color, x, y, index, tempVector3F.set(0f, 0f, 10f), -(width + 1), -(height + 1))
-                            addShape(shape2,
-                                (1.0 * 2.0) * x +  + ((1.0) * (y % 2)), (0.75 * 2.0) * y - 1,
-                                color, colors, positions, indices)
-
-                            setColor(dto, color, x, y, index, tempVector3F.set(0f, 0f, -10f), -(width + 1), -(height + 1))
-                            addShape(shape3,
-                                (1.0 * 2.0) * x +  + ((1.0) * (y % 2)), (0.75 * 2.0) * y - 1,
-                                color, colors, positions, indices)*/
-
-                            //println("${(abs(-(height + 1)) + y) % 6} | ${(abs(-(height + 1)) + y) % 3}")
-
                             setColor(dto, color, x, y, index, tempVector3F.clear(), -(width + 1), -(height + 0))
 
                             if((abs(-(height + 0)) + y) % 3 == 0){
@@ -361,7 +216,6 @@ class Mesh {
 
                     for(y in -(height + 1)..height){
                         for(x in -(width + 1)..width){
-                            //setting.colorSetting.setHsl(color, x, y, index)
                                 tempVector3F.set(x * 10f, 0f, 0f)
                             setColor(dto, color, x, y, index, tempVector3F, -(width + 1), -(height + 1))
                             if(x % 2 == 0){
@@ -375,11 +229,7 @@ class Mesh {
                                     ((1.0 - ratioReverse * 2.0) * 2.0) * y - 1,
                                     color, colorVertices, positionVertices, indices)
                             }
-                            /*setting.colorSetting1.setHsl(color, x, y, index)
-                            addShape(shape2,
-                                ((1.0 - ratioReverse) * 2.0) * x + ratio,
-                                ((1.0 - ratioReverse * 2.0) * 2.0) * y - 1,
-                                color, colors, positions, indices)*/
+
                             index++
                         }
                     }
@@ -731,114 +581,3 @@ class Mesh {
 
 }
 
-/*
-*
-*                     points.addAll(listOf(
-                        Vector2D(-8 / 10.0, -8 / 10.0),
-                        Vector2D(-4 / 10.0, -8 / 10.0),
-                        Vector2D(-4 / 10.0, -6 / 10.0),
-                        Vector2D(-0 / 10.0, -6 / 10.0),
-
-                        Vector2D(-0 / 10.0, -4 / 10.0),
-                        Vector2D(2 / 10.0, -4 / 10.0),
-                        Vector2D(2 / 10.0, -2 / 10.0),
-
-                        Vector2D(-2 / 10.0, -2 / 10.0),
-                        Vector2D(-2 / 10.0, -1 / 10.0),
-                        Vector2D(-5 / 10.0, -1 / 10.0),
-                        Vector2D(-5 / 10.0, -2 / 10.0),
-                        Vector2D(-6 / 10.0, -2 / 10.0),
-                        Vector2D(-6 / 10.0, -6 / 10.0),
-                        Vector2D(-8 / 10.0, -6 / 10.0),
-                        ))
-
-                    val shape1 = triangulate(points)
-                    points.clear()
-
-                    points.addAll(listOf(
-                        Vector2D(-8 / 10.0, 0 / 10.0),
-                        Vector2D(-4 / 10.0, 0 / 10.0),
-                        Vector2D(-4 / 10.0, -1 / 10.0),
-                        Vector2D(-2 / 10.0, -1 / 10.0),
-                        Vector2D(-2 / 10.0, -2 / 10.0),
-
-                        Vector2D(7 / 10.0, -2 / 10.0),
-                        Vector2D(7 / 10.0, -1 / 10.0),
-                        Vector2D(8 / 10.0, -1 / 10.0),
-                        Vector2D(8 / 10.0, 0 / 10.0),
-                        Vector2D(4 / 10.0, 0 / 10.0),
-                        Vector2D(4 / 10.0, 1 / 10.0),
-                        Vector2D(2 / 10.0, 1 / 10.0),
-                        Vector2D(2 / 10.0, 2 / 10.0),
-
-                        Vector2D(-7 / 10.0, 2 / 10.0),
-                        Vector2D(-7 / 10.0, 1 / 10.0),
-                        Vector2D(-8 / 10.0, 1 / 10.0),
-
-                        ))
-
-                    val shape2 = triangulate(points)
-
-                    points.clear()
-                    points.addAll(listOf(
-                        Vector2D(2 / 100.0, 0 / 100.0),
-                        Vector2D(7 / 100.0, 0 / 100.0),
-                        Vector2D(22 / 100.0, 9 / 100.0),
-                        Vector2D(34 / 100.0, 6 / 100.0),
-                        Vector2D(45 / 100.0, 8 / 100.0),
-                        Vector2D(55 / 100.0, 26 / 100.0),
-                        Vector2D(77 / 100.0, 33 / 100.0),
-                        Vector2D(95 / 100.0, 34 / 100.0),
-                        Vector2D(82 / 100.0, 41 / 100.0),
-                        Vector2D(77 / 100.0, 42 / 100.0),
-                        Vector2D(67 / 100.0, 41 / 100.0),
-                        Vector2D(55 / 100.0, 43 / 100.0),
-                        Vector2D(44 / 100.0, 60 / 100.0),
-                        Vector2D(37 / 100.0, 62 / 100.0),
-                        Vector2D(12 / 100.0, 67 / 100.0),
-
-                        Vector2D(5 / 100.0, 66 / 100.0),
-                        Vector2D(12 / 100.0, 67 / 100.0),
-                        Vector2D(15 / 100.0, 59 / 100.0),
-                        Vector2D(23 / 100.0, 51 / 100.0),
-                        Vector2D(23 / 100.0, 47 / 100.0),
-                        Vector2D(0 / 100.0, 47 / 100.0),
-                        Vector2D(12 / 100.0, 34 / 100.0),
-                        Vector2D(24 / 100.0, 27 / 100.0),
-                        Vector2D(9 / 100.0, 14 / 100.0),
-                        Vector2D(0 / 100.0, 2 / 100.0),
-                        ))
-
-                    val shape3 = triangulate(points)
-                    points.clear()
-
-                    points.addAll(listOf(
-                        Vector2D((100 - 2) / 100.0,0 / 100.0),
-                        Vector2D((100 - 7) / 100.0,0 / 100.0),
-                        Vector2D((100 - 22) / 100.0,9 / 100.0),
-                        Vector2D((100 - 34) / 100.0,6 / 100.0),
-                        Vector2D((100 - 45) / 100.0,8 / 100.0),
-                        Vector2D((100 - 55) / 100.0,26 / 100.0),
-                        Vector2D((100 - 77) / 100.0,33 / 100.0),
-                        Vector2D((100 - 95) / 100.0,34 / 100.0),
-                        Vector2D((100 - 82) / 100.0,41 / 100.0),
-                        Vector2D((100 - 77) / 100.0,42 / 100.0),
-                        Vector2D((100 - 67) / 100.0,41 / 100.0),
-                        Vector2D((100 - 55) / 100.0,43 / 100.0),
-                        Vector2D((100 - 44) / 100.0,60 / 100.0),
-                        Vector2D((100 - 37) / 100.0,62 / 100.0),
-                        Vector2D((100 - 12) / 100.0,67 / 100.0),
-
-                        Vector2D((100 - 5) / 100.0,66 / 100.0),
-                        Vector2D((100 - 12) / 100.0,67 / 100.0),
-                        Vector2D((100 - 15) / 100.0,59 / 100.0),
-                        Vector2D((100 - 23) / 100.0,51 / 100.0),
-                        Vector2D((100 - 23) / 100.0,47 / 100.0),
-                        Vector2D((100 - 0) / 100.0,47 / 100.0),
-                        Vector2D((100 - 12) / 100.0,34 / 100.0),
-                        Vector2D((100 - 24) / 100.0,27 / 100.0),
-                        Vector2D((100 - 9) / 100.0,14 / 100.0),
-                        Vector2D((100 - 0) / 100.0,2 / 100.0),
-                    ))
-
-* */

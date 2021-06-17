@@ -108,17 +108,8 @@ class Vector3F() {
 
     fun nor() : Vector3F {
         val length = length()
-        return mul(1f / sqrt(length))//divide(length)
+        return mul(1f / sqrt(length))
     }
-
-    /*
-    *
-    * 	public Vector3 nor () {
-		final float len2 = this.len2();
-		if (len2 == 0f || len2 == 1f) return this;
-		return this.scl(1f / (float)Math.sqrt(len2));
-	}
-    * */
 
     fun length(): Float{
         return this.x * this.x + this.y * this.y + this.z * this.z;

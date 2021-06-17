@@ -36,10 +36,6 @@ class Controller {
     fun getIndex(model: Model,
                  @ModelAttribute("formSettingsDto") formSettingsDto: FormSettingsDto,
                  @CookieValue("lang") lang: String?): String {
-
-        //println("/ $lang $reset")
-        //if(reset != null && reset) formSettingsDto.reset()
-
         setModel(model, formSettingsDto, lang ?: "en")
 
         return "index"

@@ -1,20 +1,13 @@
 attribute vec3 aVertexPosition;
 attribute vec3 aVertexNormal;
 attribute vec4 aVertexColor;
-//attribute vec2 aTextureCoord;
 
 uniform mat4 uProjectionMatrix;
 uniform mat4 uModelViewMatrix;
 uniform mat4 uNormalMatrix;
 
-//uniform float uTime;
-
 varying lowp vec4 vColor;
-//varying highp vec2 vTextureCoord;
 varying highp vec3 vLighting;
-
-//varying float vTime;
-
 
 void main(void) {
     gl_Position = uProjectionMatrix * uModelViewMatrix * vec4(aVertexPosition, 1.0);
@@ -28,6 +21,4 @@ void main(void) {
 
     vLighting = ambientLight + (directionalLightColor * directional);
     vColor = aVertexColor;
-    //vTime = uTime;
-    //vTextureCoord = aTextureCoord;
 }

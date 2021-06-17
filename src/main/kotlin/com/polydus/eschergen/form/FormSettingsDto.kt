@@ -20,17 +20,6 @@ class FormSettingsDto() {
         repeat(10){
             addColor(FixedColor())
         }
-        /*getColors()[0].hue = 0f
-        getColors()[1].hue = 120f
-        getColors()[2].hue = 240f
-        getColors()[3].hue = 180f
-        getColors()[4].hue = 300f
-
-        getColors()[5].hue = 60f
-        getColors()[6].hue = 150f
-        getColors()[7].hue = 210f
-        getColors()[8].hue = 270f
-        getColors()[9].hue = 330f*/
 
         reset()
     }

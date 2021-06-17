@@ -237,23 +237,6 @@ FORM
 }
 
 
-/*
-.form-range-hue{
-    background: linear-gradient(to right, red 0%, #ff0 17%, lime 33%, cyan 50%, blue 66%, #f0f 83%, red 100%);
-}
-.form-range-lightness{
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 100%);
-}
-.form-range-red{
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 100%);
-}
-.form-range-green{
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,255,0,1) 100%);
-}
-.form-range-blue{
-    background: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,255,1) 100%);
-}*/
-
 
 
 .form-range::-moz-range-thumb {
@@ -437,10 +420,6 @@ FOOTER
 #polydus-copyright {
     width: 100%;
 }
-
-/*.topbar {
-    background-color: #4aa4ff;
-}*/
 
 .blog-header {
     background-color: #2196F3;

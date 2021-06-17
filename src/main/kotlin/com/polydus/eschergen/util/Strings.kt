@@ -3,9 +3,6 @@ package com.polydus.eschergen.util
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import org.springframework.beans.factory.annotation.Value
-import org.springframework.boot.json.GsonJsonParser
-import org.springframework.boot.json.JsonParser
-import org.springframework.boot.json.JsonParserFactory
 import org.springframework.core.io.Resource
 import org.springframework.stereotype.Component
 import org.springframework.ui.Model
@@ -33,10 +30,6 @@ class Strings() {
         input = resourceFileNL.inputStream
         string = String(input.readAllBytes())
         stringsNL = json.decodeFromString<HashMap<String, String>>(string)
-    }
-
-    fun addAllStringsToModel(model: Model){
-        addAllStringsToModel(model, "en")
     }
 
     fun addAllStringsToModel(model: Model, lang: String){

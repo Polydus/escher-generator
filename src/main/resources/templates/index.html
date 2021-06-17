@@ -28,8 +28,6 @@
 
 <main role="main" class="">
 
-
-
     <div id="title-sm-container" class="row d-block d-sm-none mb4">
         <h3 class="header-title-sm" th:text="${strings.title}"></h3>
     </div>
@@ -47,28 +45,10 @@
         <div th:replace="fragments/about :: div"></div>
     </div>
 
-
-
-
     <div id="container-canvas" class="canvas-container">
         <div th:replace="fragments/canvas :: div"></div>
 
     </div>
-
-
-
-
-<!--
-    <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#"  th:text="${strings.lang}"
-           role="button" id="dropdownMenuLink"
-           data-bs-toggle="dropdown" aria-expanded="false">
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-us"></span><span th:text="${strings.lang_en}"></span></a></li>
-            <li><a class="dropdown-item" href="#"><span class="flag-icon flag-icon-nl"></span><span th:text="${strings.lang_nl}"></span></a></li>
-        </ul>
-    </div>-->
 
 </main>
 
