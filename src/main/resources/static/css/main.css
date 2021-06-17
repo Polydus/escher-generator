@@ -157,8 +157,9 @@ FORM
 }
 
 #colors-form {
-  background-color: #eee;
+    background-color: #eee;
     padding: 1rem;
+    padding-top: 0;
 }
 
 .color-example {
@@ -484,6 +485,10 @@ a.active:focus {
 
 .nomargintop {
     margin-top: 0;
+}
+
+.nomarginbottom {
+    margin-bottom: 0;
 }
 
 .autowidth {

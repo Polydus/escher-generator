@@ -38,6 +38,10 @@
 
 
     <div class="collapse multi-collapse" id="color-form-collapse"  data-parent="">
+        <form action="/reset" method="get" id="reset-button-container" class="container justify-content-between">
+            <h2 id="about-header" th:text="${strings.colorform_header}"></h2>
+            <button id="submit-button3" th:utext="${strings.reset}" class="btn blue-full-button"></button>
+        </form>
         <div th:replace="fragments/fixedcolorform :: form"></div>
     </div>
 
