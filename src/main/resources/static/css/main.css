@@ -73,14 +73,22 @@ body {
     max-width: max-content;
     min-width: max-content;
     padding: 0;
+    border-bottom: 1px solid #1976D2;
+    margin-bottom: -1px;
+    border-top: 1px solid #1976D2;
+    margin-top: -1px;
 }
 
 .canvas-controls-border-right {
     border-right: solid 1px #1976D2;
+    /*border-right: solid 1px #1976D2;*/
+    margin-right: -1px;
 }
 
 .canvas-controls-border-left {
     border-left: solid 1px #1976D2;
+    border-top: 0;
+    margin-top: 0;
 }
 
 .canvas-option{
